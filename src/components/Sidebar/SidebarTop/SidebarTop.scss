@@ -1,0 +1,56 @@
+.sidebar-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  transition: all 0.1s ease-in-out;
+
+  &__image {
+    width: 70px;
+    transition: all 0.1s ease-in-out;
+
+    &_large {
+      width: 100px;
+    }
+  }
+
+  &__switcher {
+    position: absolute;
+    top: 50%;
+    right: -70px;
+
+    &_opened {
+      right: calc(-5px + (0px - var(--sidebar-wrapper-padding)));
+    }
+  }
+
+  &__button {
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 40px;
+      width: 40px;
+      background-color: var(--sidebar-bg-color);
+      border-radius: 50%;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &_opened::before {
+      background-color: var(--main-bg-color);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: block;
+  }
+}

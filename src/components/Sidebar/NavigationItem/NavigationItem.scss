@@ -1,0 +1,35 @@
+.navigation-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: var(--main-border-radius);
+  min-height: 57px;
+  padding: 15px 15px;
+
+  &_opened {
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 15px 25px;
+  }
+
+  &:hover {
+    background-color: var(--main-bg-color);
+  }
+
+  &:active {
+    background-color: var(--item-active-color);
+  }
+
+  &__text {
+    opacity: 0;
+    width: 0;
+
+    &_showed {
+      opacity: 1;
+      transition: opacity 1s ease-out;
+    }
+  }
+}
